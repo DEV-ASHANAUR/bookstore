@@ -1,16 +1,10 @@
-import {
-  ArchiveBoxIcon,
-  ArchiveBoxXMarkIcon,
-  CurrencyBangladeshiIcon,
-} from "@heroicons/react/24/solid";
+import { ArchiveBoxIcon, ArchiveBoxXMarkIcon, CurrencyBangladeshiIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { AddToCart } from "./AddToCart";
-import Link from "next/link";
 
-export function BookCard({ book }) {
+const BookDetails = ({ book }) => {
   return (
-    <Link href={`/store/book/${book.id}`}>
-      <div className="flex flex-col bg-white py-4 px-4 rounded-sm">
+    <div className="flex flex-col bg-white py-4 px-4 rounded-sm">
         <div className="flex justify-center items-center w-full mb-2">
           <Image
             src={book.cover}
@@ -51,6 +45,7 @@ export function BookCard({ book }) {
         <hr className="w-full my-4" />
         <AddToCart book={book} />
       </div>
-    </Link>
   );
-}
+};
+
+export default BookDetails;

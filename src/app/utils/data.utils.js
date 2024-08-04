@@ -11,7 +11,7 @@ export const mongoReplaceIdInArray = (data) => {
 };
 
 export const mongoReplaceIdInObject = (data) => {
-    const {_id,...rest} = {id:data._id.toString(),...rest}
+    const {_id,...rest} = {id:data._id.toString(),...data}
     return rest;
 
 }

@@ -7,7 +7,7 @@ export const metadata = {
   description: "An Online Bookstore to Sell and Rent Used Books",
 };
 
-export default function BookStoreLayout({ children }) {
+export default function BookStoreLayout({ children, modal }) {
   return (
     <StoreProvider>
       <div className="min-h-screen">
@@ -16,7 +16,9 @@ export default function BookStoreLayout({ children }) {
           <Sidebar />
           <div className="md:grow">{children}</div>
         </div>
+        {modal}
+        <div id="modal-root-id" />
       </div>
-     </StoreProvider>
+    </StoreProvider>
   );
 }
